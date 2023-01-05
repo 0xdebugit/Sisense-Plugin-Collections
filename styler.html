@@ -1,0 +1,149 @@
+<div data-ng-controller="plugin-bar3d.controllers.stylerController">
+
+    <div class="settings-pane-host">
+
+		<div class="pane-row">
+			<div class="pane-row-title">Chart View</div>
+
+			<div class="positions-holder">
+				 <div data-ng-class="{ selected: model.Projection == 'Perspective'}" data-ng-click="SetProjection('Perspective')" class="radio-option-item">
+					<div class="custom-radio-btn" data-ng-class="{ selected: model.Projection == 'Perspective'}"></div>
+					<div class="radio-option-separator"></div>
+					<div class="radio-option-caption">Perspective</div>
+				 </div>
+
+				 <div data-ng-class="{ selected: model.Projection == 'Orthographic'}" data-ng-click="SetProjection('Orthographic')" class="radio-option-item">
+					<div class="custom-radio-btn" data-ng-class="{ selected: model.Projection == 'Orthographic'}"></div>
+					<div class="radio-option-separator"></div>
+					<div class="radio-option-caption">Orthographic</div>
+				 </div>
+				 
+
+			 
+			</div>
+		</div>
+
+		<div class="pane-row">
+			<div class="pane-row-title">Format Number</div>
+
+			<div class="positions-holder">
+				 <div data-ng-class="{ selected: model.NumberFormat == 'Percent'}" data-ng-click="SetNumberFormat('Percent')" class="radio-option-item">
+					<div class="custom-radio-btn" data-ng-class="{ selected: model.NumberFormat == 'Percent'}"></div>
+					<div class="radio-option-separator"></div>
+					<div class="radio-option-caption">Percent</div>
+				 </div>
+
+				 <div data-ng-class="{ selected: model.NumberFormat == 'Number'}" data-ng-click="SetNumberFormat('Number')" class="radio-option-item">
+					<div class="custom-radio-btn" data-ng-class="{ selected: model.NumberFormat == 'Number'}"></div>
+					<div class="radio-option-separator"></div>
+					<div class="radio-option-caption">Number</div>
+				 </div>
+			</div>
+		</div>		
+
+		<div class="pane-row">
+			<div class="pane-row-title">Interval X-Axis</div>
+			<div class="black-slider">
+				<data-slider class="numeric-slider"
+								style="margin-top: 5px"
+								data-type="value"
+								data-min="0"
+								data-max="5"
+								data-step="1"
+								data-value="model.IntervalX"
+								data-trigger="change"
+								data-on-release="SetAxisInterval('x',model.IntervalX)"></data-slider>
+			</div>				
+		</div>	
+
+		<div class="pane-row">
+			<div class="pane-row-title">Interval Y-Axis</div>
+			<div class="black-slider">
+				<data-slider class="numeric-slider"
+								style="margin-top: 5px"
+								data-type="value"
+								data-min="0"
+								data-max="5"
+								data-step="1"
+								data-value="model.IntervalY"
+								data-trigger="change"
+								data-on-release="SetAxisInterval('y',model.IntervalY)"></data-slider>
+			</div>				
+		</div>			
+		
+		<div class="pane-row">
+			<div class="pane-row-title">Box Depth Size</div>
+			<div class="black-slider">
+				<data-slider class="numeric-slider"
+								style="margin-top: 5px"
+								data-type="value"
+								data-min="120"
+								data-max="300"
+								data-step="5"
+								data-value="model.BoxDepth"
+								data-trigger="change"
+								data-on-release="SetBoxDepth(model.BoxDepth)"></data-slider>
+			</div>				
+		</div>	
+
+		<div class="pane-row">
+			<div class="pane-row-title">Box Width Size</div>
+			<div class="black-slider">
+				<data-slider class="numeric-slider"
+								style="margin-top: 5px"
+								data-type="value"
+								data-min="120"
+								data-max="300"
+								data-step="5"
+								data-value="model.BoxWidth"
+								data-trigger="change"
+								data-on-release="SetBoxWidth(model.BoxWidth)"></data-slider>
+			</div>			
+		</div>
+
+		<div class="pane-row">
+			<div class="pane-row-title">Chart Distance</div>
+			<div class="black-slider">
+				<data-slider class="numeric-slider"
+								style="margin-top: 5px"
+								data-type="value"
+								data-min="250"
+								data-max="550"
+								data-step="5"
+								data-value="model.ChartDistance"
+								data-trigger="change"
+								data-on-release="SetChartDistance(model.ChartDistance)"></data-slider>
+			</div>				
+		</div>
+
+		<div class="pane-row">
+			<div class="pane-row-title">Color Series</div>
+			<div class="black-slider">
+				<input
+					type="text"
+					ng-model="model.ColorSeries"
+					ng-change="SetColorSeries(model.ColorSeries)"
+				/>
+			</div>				
+		</div>				
+
+		<div class="pane-row">
+			<div class="pane-row-title">Chart Customization</div>
+
+			<div class="positions-holder">
+				<data-checker-pane data-pane-title="Shadow"
+								data-pane-enabled="model.ChartShadow"
+								data-on-change="SetChartShadow(model.ChartShadow)"></data-checker-pane>		
+				<data-checker-pane data-pane-title="Auto Rotate"
+								data-pane-enabled="model.AutoRotate"
+								data-on-change="SetAutoRotate(model.AutoRotate)"></data-checker-pane>	
+				<data-checker-pane data-pane-title="Tooltip"
+								data-pane-enabled="model.ChartTooltip"
+								data-on-change="SetChartTooltip(model.ChartTooltip)"></data-checker-pane>																			 
+			</div>
+		</div>											
+
+	</div>
+
+		
+</div>

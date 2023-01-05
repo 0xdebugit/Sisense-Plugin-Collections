@@ -1,0 +1,20 @@
+{
+    "name": "bar3d",
+    "pluginInfraVersion": 1,
+    "source": [
+        "stylerController.js",
+        "libraries/echarts.min.js",
+        "libraries/echarts-gl.min.js",
+        "libraries/dat.gui.min.js",
+        "libraries/dataTool.js",
+        "libraries/ecStat.min.js",
+        "libraries/world.js",
+        "3DBar.js",
+        "widget.js"
+    ],
+    "style": [
+        "widget.css"
+    ],
+    "lastUpdate": "2021-09-3T04:05:09.775Z",
+    "folderName": "Bar3D"
+}
